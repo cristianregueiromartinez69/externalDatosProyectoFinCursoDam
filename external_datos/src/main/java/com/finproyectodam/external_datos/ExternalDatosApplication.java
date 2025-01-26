@@ -13,7 +13,7 @@ public class ExternalDatosApplication {
 	}
 
 	/*
-	  TODO: inicio y registro de usuarios en la aplicación
+	  TODO: hacer comprobaciones y errores
 	 */
 
 }
