@@ -1,4 +1,4 @@
-package servicio_comunicacion;
+package com.finproyectodam.external_datos.servicio_comunicacion;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
