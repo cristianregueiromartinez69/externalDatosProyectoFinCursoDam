@@ -22,13 +22,11 @@ public class RegistroUsuariosRestController {
 
     @PostMapping("registrousuarios")
     public ResponseEntity<String> registroUsuariosSpotify(@RequestBody RegistroUsuariosDTO registroUsuariosDTO) {
-
         try{
             servicioRegistroUsuarios.registerUsuariosService(registroUsuariosDTO);
             return ResponseEntity.ok("Usuario registrado correctamente");
         }catch(UserNameException e){
             return new ResponseEntity<>("formato de nombre incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
         }
-
     }
 }
