@@ -1,5 +1,6 @@
 package com.finproyectodam.external_datos.registrousuarios.controller;
 
+import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
 import com.finproyectodam.external_datos.registrousuarios.model.RegistroUsuariosDTO;
 import com.finproyectodam.external_datos.registrousuarios.service.ServicioRegistroUsuarios;
 import org.springframework.http.HttpStatus;
@@ -25,8 +26,8 @@ public class RegistroUsuariosRestController {
         try{
             servicioRegistroUsuarios.registerUsuariosService(registroUsuariosDTO);
             return ResponseEntity.ok("Usuario registrado correctamente");
-        }catch(Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }catch(UserNameException e){
+            return new ResponseEntity<>("formato de nombre incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
         }
 
     }
