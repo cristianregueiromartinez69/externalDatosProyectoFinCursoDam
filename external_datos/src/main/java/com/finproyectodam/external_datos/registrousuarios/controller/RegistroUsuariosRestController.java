@@ -1,5 +1,6 @@
 package com.finproyectodam.external_datos.registrousuarios.controller;
 
+import com.finproyectodam.external_datos.registrousuarios.excepciones.EmailException;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
 import com.finproyectodam.external_datos.registrousuarios.model.RegistroUsuariosDTO;
 import com.finproyectodam.external_datos.registrousuarios.service.ServicioRegistroUsuarios;
@@ -27,6 +28,8 @@ public class RegistroUsuariosRestController {
             return ResponseEntity.ok("Usuario registrado correctamente");
         }catch(UserNameException e){
             return new ResponseEntity<>("formato de nombre incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
+        }catch(EmailException e){
+            return new ResponseEntity<>("email incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
         }
     }
 }
