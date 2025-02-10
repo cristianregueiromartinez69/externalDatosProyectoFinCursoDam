@@ -1,6 +1,7 @@
 package com.finproyectodam.external_datos;
 
 import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesEmail;
+import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesPassword;
 import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesUserName;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ public class TestRegistroUsuarios {
 
     ComprobacionesUserName comproUser = new ComprobacionesUserName();
     ComprobacionesEmail comprobacionEmail = new ComprobacionesEmail();
+    ComprobacionesPassword comprobacionPassword = new ComprobacionesPassword();
 
 
     @Test
@@ -165,6 +167,55 @@ public class TestRegistroUsuarios {
     void authenticationAllRegisterEmailFalse(){
         boolean email = comprobacionEmail.authenticationRegisterEmail("mariavazque@gmail.cam");
         Assertions.assertFalse(email);
+    }
+
+
+    @Test
+    void checkLengthRegisterPasswordTrue(){
+        boolean password = comprobacionPassword.checkLengthPassword("123456789lal");
+        Assertions.assertTrue(password);
+    }
+
+    @Test
+    void checkLengthRegisterPasswordFalse(){
+        boolean password = comprobacionPassword.checkLengthPassword("1234567");
+        Assertions.assertFalse(password);
+    }
+
+    @Test
+    void checkIfAPasswordHaveSpecialCharactersTrue(){
+        boolean password = comprobacionPassword.checkPasswordHasStrangeThings("12345$njnfn¨¨");
+        Assertions.assertTrue(password);
+    }
+
+    @Test
+    void checkIfAPasswordHaveSpecialCharactersFalse(){
+        boolean password = comprobacionPassword.checkPasswordHasStrangeThings("123456789023fff");
+        Assertions.assertFalse(password);
+    }
+
+    @Test
+    void checkIfAPasswordHaveNumbersTrue(){
+        boolean password = comprobacionPassword.checkPaswordHasNumbers("12345$njnfn¨¨");
+        Assertions.assertTrue(password);
+    }
+
+    @Test
+    void checkIfAPasswordHaveNumbersFalse(){
+        boolean password = comprobacionPassword.checkPaswordHasNumbers("kakakaka");
+        Assertions.assertFalse(password);
+    }
+
+    @Test
+    void checkIfAPasswordIsValidateTrue(){
+        boolean password = comprobacionPassword.authenticationRegisterPassword("cristiano#siuu1");
+        Assertions.assertTrue(password);
+    }
+
+    @Test
+    void checkIfAPasswordIsValidateFalse(){
+        boolean password = comprobacionPassword.authenticationRegisterPassword("123456789");
+        Assertions.assertFalse(password);
     }
 
 

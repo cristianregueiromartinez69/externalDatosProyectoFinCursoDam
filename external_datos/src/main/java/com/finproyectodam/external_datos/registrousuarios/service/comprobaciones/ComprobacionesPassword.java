@@ -3,6 +3,16 @@ package com.finproyectodam.external_datos.registrousuarios.service.comprobacione
 public class ComprobacionesPassword {
 
     /**
+     * Metodo para comprobar autenticación de contraseña en registro de usuario
+     * @param password la contraseña
+     * @return true o false dependiendo de si la introduces bien o mal
+     */
+    public boolean authenticationRegisterPassword(String password){
+        return checkLengthPassword(password) && checkPasswordHasStrangeThings(password) &&
+                checkPaswordHasNumbers(password);
+    }
+
+    /**
      * Metodo para comprobar si la contraseña del usuario tiene 12 o más caracteres
      * @param password la contraseña proporcionada
      * @return true o false si cumple los requisitios
