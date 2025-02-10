@@ -12,8 +12,6 @@ public class ExternalDatosApplication {
 		SpringApplication.run(ExternalDatosApplication.class, args);
 	}
 
-	/*
-	  TODO: hacer comprobaciones y errores
-	 */
+
 
 }

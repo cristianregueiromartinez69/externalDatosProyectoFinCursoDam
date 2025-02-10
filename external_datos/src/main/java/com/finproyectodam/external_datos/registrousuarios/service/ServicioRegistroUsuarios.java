@@ -28,14 +28,16 @@ public class ServicioRegistroUsuarios {
         if(!comrpUser.authenticationRegisterName(registroUsuariosDTO.getUserName())){
             throw new UserNameException("Username incorrecto, introduce otro");
         }
-        else if(comrpEmail.authenticationRegisterEmail(registroUsuariosDTO.getCorreo())){
+        else if(!comrpEmail.authenticationRegisterEmail(registroUsuariosDTO.getCorreo())){
             throw new EmailException("Correo incorrecto, introduce otro");
         }
-        else if(comrpPassword.authenticationRegisterPassword(registroUsuariosDTO.getPassword())){
+        else if(!comrpPassword.authenticationRegisterPassword(registroUsuariosDTO.getPassword())){
             throw new PasswordException("contraseña mal introducida, introduce otro");
         }
         else{
-            servicioDB.registerUsers(registroUsuariosDTO);
+            RegistroUsuariosDTO registroUsuariosDTO1 = new RegistroUsuariosDTO(registroUsuariosDTO.getUserName(), registroUsuariosDTO.getCorreo(), registroUsuariosDTO.getPassword(), registroUsuariosDTO.getDateReg());
+
+            servicioDB.registerUsers(registroUsuariosDTO1);
         }
     }
 

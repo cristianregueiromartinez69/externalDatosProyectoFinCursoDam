@@ -1,5 +1,7 @@
 package com.finproyectodam.external_datos.registrousuarios.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.EmailException;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.PasswordException;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/spotify/")
+@RequestMapping("/spotify")
 public class RegistroUsuariosRestController {
 
     private final ServicioRegistroUsuarios servicioRegistroUsuarios;
@@ -22,7 +24,7 @@ public class RegistroUsuariosRestController {
         this.servicioRegistroUsuarios = servicioRegistroUsuarios;
     }
 
-    @PostMapping("registrousuarios")
+    @PostMapping("/registrousuarios")
     public ResponseEntity<String> registroUsuariosSpotify(@RequestBody RegistroUsuariosDTO registroUsuariosDTO) {
         try {
             servicioRegistroUsuarios.registerUsuariosService(registroUsuariosDTO);
@@ -33,6 +35,7 @@ public class RegistroUsuariosRestController {
             return new ResponseEntity<>("Formato de email incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
         } catch (PasswordException passEx) {
             return new ResponseEntity<>("Formato contraseña erroneo, debe ser de 12 o más carácteres, llevar mínimo 1 numero y 1 carácter especial, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
+
 
         }
     }

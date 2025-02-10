@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "relationaldb", url = "http://localhost:8081")
+@FeignClient(name = "relationaldb", url = ("http://localhost:8081"))
 public interface ServicioDB {
 
 
