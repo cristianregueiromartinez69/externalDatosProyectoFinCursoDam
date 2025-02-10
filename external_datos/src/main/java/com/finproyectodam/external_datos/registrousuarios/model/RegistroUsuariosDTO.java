@@ -4,15 +4,15 @@ import java.time.LocalDate;
 
 public class RegistroUsuariosDTO {
 
-    private String userName;
-    private String correo;
-    private String password;
+    private String username;
+    private String email;
+    private String passwordU;
     private LocalDate dateReg;
 
     public RegistroUsuariosDTO(String userName, String correo, String password, LocalDate dateReg) {
-        this.userName = userName;
-        this.correo = correo;
-        this.password = password;
+        this.username = userName;
+        this.email = correo;
+        this.passwordU = password;
         this.dateReg = dateReg;
     }
 
@@ -20,28 +20,28 @@ public class RegistroUsuariosDTO {
     }
 
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordU() {
+        return passwordU;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordU(String passwordU) {
+        this.passwordU = passwordU;
     }
 
     public LocalDate getDateReg() {

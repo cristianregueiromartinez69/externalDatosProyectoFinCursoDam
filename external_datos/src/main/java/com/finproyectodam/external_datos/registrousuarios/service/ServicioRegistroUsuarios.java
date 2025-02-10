@@ -25,17 +25,17 @@ public class ServicioRegistroUsuarios {
         ComprobacionesEmail comrpEmail = new ComprobacionesEmail();
         ComprobacionesPassword comrpPassword = new ComprobacionesPassword();
 
-        if(!comrpUser.authenticationRegisterName(registroUsuariosDTO.getUserName())){
+        if(!comrpUser.authenticationRegisterName(registroUsuariosDTO.getUsername())){
             throw new UserNameException("Username incorrecto, introduce otro");
         }
-        else if(!comrpEmail.authenticationRegisterEmail(registroUsuariosDTO.getCorreo())){
+        else if(!comrpEmail.authenticationRegisterEmail(registroUsuariosDTO.getEmail())){
             throw new EmailException("Correo incorrecto, introduce otro");
         }
-        else if(!comrpPassword.authenticationRegisterPassword(registroUsuariosDTO.getPassword())){
+        else if(!comrpPassword.authenticationRegisterPassword(registroUsuariosDTO.getPasswordU())){
             throw new PasswordException("contraseña mal introducida, introduce otro");
         }
         else{
-            RegistroUsuariosDTO registroUsuariosDTO1 = new RegistroUsuariosDTO(registroUsuariosDTO.getUserName(), registroUsuariosDTO.getCorreo(), registroUsuariosDTO.getPassword(), registroUsuariosDTO.getDateReg());
+            RegistroUsuariosDTO registroUsuariosDTO1 = new RegistroUsuariosDTO(registroUsuariosDTO.getUsername(), registroUsuariosDTO.getEmail(), registroUsuariosDTO.getPasswordU(), registroUsuariosDTO.getDateReg());
 
             servicioDB.registerUsers(registroUsuariosDTO1);
         }
