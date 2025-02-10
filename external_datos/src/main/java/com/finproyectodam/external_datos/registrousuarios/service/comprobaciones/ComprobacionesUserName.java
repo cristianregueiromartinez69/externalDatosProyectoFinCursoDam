@@ -1,6 +1,4 @@
-package com.finproyectodam.external_datos.registrousuarios.service;
-
-import org.springframework.context.annotation.Bean;
+package com.finproyectodam.external_datos.registrousuarios.service.comprobaciones;
 
 
 public class ComprobacionesUserName {

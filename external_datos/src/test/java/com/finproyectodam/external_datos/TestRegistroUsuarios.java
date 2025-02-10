@@ -1,11 +1,9 @@
 package com.finproyectodam.external_datos;
 
-import com.finproyectodam.external_datos.registrousuarios.service.ComprobacionesEmail;
-import com.finproyectodam.external_datos.registrousuarios.service.ComprobacionesUserName;
+import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesEmail;
+import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesUserName;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 public class TestRegistroUsuarios {
 

@@ -3,8 +3,9 @@ package com.finproyectodam.external_datos.registrousuarios.service;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.EmailException;
 import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
 import com.finproyectodam.external_datos.registrousuarios.model.RegistroUsuariosDTO;
+import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesEmail;
+import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesUserName;
 import com.finproyectodam.external_datos.servicio_comunicacion.ServicioDB;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

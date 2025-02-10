@@ -1,4 +1,4 @@
-package com.finproyectodam.external_datos.registrousuarios.service;
+package com.finproyectodam.external_datos.registrousuarios.service.comprobaciones;
 
 public class ComprobacionesPassword {
 
