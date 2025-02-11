@@ -1,5 +1,10 @@
 package com.finproyectodam.external_datos.registrousuarios.service.comprobaciones;
 
+/**
+ * Clase encargada de realizar diversas comprobaciones sobre la validez de una contraseña.
+ * @author cristian && Joel
+ * @version 1.0
+ */
 public class ComprobacionesPassword {
 
     /**

@@ -1,6 +1,11 @@
 package com.finproyectodam.external_datos.registrousuarios.service.comprobaciones;
 
-
+/**
+ * Clase encargada de realizar diversas comprobaciones sobre la validez de un alias.
+ * Incluye métodos para verificar el formato, la presencia de caracteres no permitidos, y la validez del dominio.
+ * @author cristian && Joel
+ * @version 1.0
+ */
 public class ComprobacionesUserName {
 
     /**

@@ -1,7 +1,20 @@
 package com.finproyectodam.external_datos.registrousuarios.service.comprobaciones;
 
+/**
+ * Clase encargada de realizar diversas comprobaciones sobre la validez de un correo electrónico.
+ * Incluye métodos para verificar el formato, la presencia de caracteres no permitidos, y la validez del dominio.
+ * @author cristian && Joel
+ * @version 1.0
+ */
 public class ComprobacionesEmail {
 
+    /**
+     * Metodo principal para validar un correo electrónico. Realiza varias comprobaciones como la presencia de
+     * caracteres especiales, el formato de la dirección y el dominio.
+     *
+     * @param email El correo electrónico a verificar.
+     * @return true si el correo cumple con todas las condiciones de validez, false en caso contrario.
+     */
     public boolean authenticationRegisterEmail(String email){
 
         return checkArobaEmailFirstLetter(email) && checkEmailHasAAroba(email) && checkEmailHasAArobaMoreThan1Time(email) &&
