@@ -13,7 +13,7 @@ public class LoginUsuariosService {
         this.servicioDB = servicioDB;
     }
 
-    public void loginUsuariosService(LoginUsuariosDTO loginUsuariosDTO) {
+    public void loginUser(LoginUsuariosDTO loginUsuariosDTO) {
         servicioDB.loginUsuarios(loginUsuariosDTO);
     }
 }
