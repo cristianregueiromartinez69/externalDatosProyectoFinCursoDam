@@ -28,6 +28,9 @@ public class RestControllerLoginUsuario {
             if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
             }
+            else if(fe.status() == HttpStatus.UNAUTHORIZED.value()) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(fe.getMessage());
+            }
         }
         return ResponseEntity.ok("Inicio de sesión de usuario correcto");
     }
