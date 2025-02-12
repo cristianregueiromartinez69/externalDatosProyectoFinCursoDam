@@ -1,4 +1,4 @@
-package com.finproyectodam.external_datos.registrousuarios.excepciones;
+package com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones;
 
 /**
  * Excepcion del password incorrecto en el registro de usuarios

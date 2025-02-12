@@ -1,4 +1,4 @@
-package com.finproyectodam.external_datos.registrousuarios.model;
+package com.finproyectodam.external_datos.usuarios.registrousuarios.model;
 
 import java.time.LocalDate;
 
