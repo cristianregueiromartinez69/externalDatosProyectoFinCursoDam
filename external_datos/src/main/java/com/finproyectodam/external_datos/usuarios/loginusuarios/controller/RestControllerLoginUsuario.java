@@ -10,16 +10,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * RestController de envio de datos de login de usuario a la base de datos
+ * @author cristian && Joel
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/spotify/usuarios")
 public class RestControllerLoginUsuario {
 
     private final LoginUsuariosService loginUsuariosService;
 
+    /**
+     * Constructor de la clase
+     * @param loginUsuariosService el servicio de login de usuarios
+     */
     public RestControllerLoginUsuario(LoginUsuariosService loginUsuariosService) {
         this.loginUsuariosService = loginUsuariosService;
     }
 
+    /**
+     * Metodo para autenticar al usuario para el login
+     * @param loginUsuariosDTO el objeto de login de usuario
+     * @return confirmación o negación del login
+     */
     @PostMapping("/login")
     public ResponseEntity<String> loginUsuariosController(@RequestBody LoginUsuariosDTO loginUsuariosDTO) {
         try{
