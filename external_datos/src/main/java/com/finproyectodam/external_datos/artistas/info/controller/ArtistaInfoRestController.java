@@ -24,12 +24,10 @@ public class ArtistaInfoRestController {
     public ResponseEntity<ArtistaDTO> getArtistaByNombreController(@PathVariable String nombre) {
         try{
             ArtistaDTO artistaDTO = artistasInfoService.getArtistaNombre(nombre);
-            if(artistaDTO != null) {
-                return ResponseEntity.ok(artistaDTO);
-            }else {
-                return ResponseEntity.notFound().build();
-            }
-        }catch (Exception ex) {
+            return ResponseEntity.ok(artistaDTO);
+        } catch (FeignException.NotFound ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
