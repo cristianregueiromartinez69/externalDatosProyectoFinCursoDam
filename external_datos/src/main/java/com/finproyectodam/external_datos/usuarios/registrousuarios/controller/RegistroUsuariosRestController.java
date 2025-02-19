@@ -1,11 +1,11 @@
-package com.finproyectodam.external_datos.registrousuarios.controller;
+package com.finproyectodam.external_datos.usuarios.registrousuarios.controller;
 
 
-import com.finproyectodam.external_datos.registrousuarios.excepciones.EmailException;
-import com.finproyectodam.external_datos.registrousuarios.excepciones.PasswordException;
-import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
-import com.finproyectodam.external_datos.registrousuarios.model.RegistroUsuariosDTO;
-import com.finproyectodam.external_datos.registrousuarios.service.ServicioRegistroUsuarios;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.EmailException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.PasswordException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.UserNameException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.ServicioRegistroUsuarios;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

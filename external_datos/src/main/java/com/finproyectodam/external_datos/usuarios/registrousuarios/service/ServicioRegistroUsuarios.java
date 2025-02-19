@@ -1,12 +1,12 @@
-package com.finproyectodam.external_datos.registrousuarios.service;
+package com.finproyectodam.external_datos.usuarios.registrousuarios.service;
 
-import com.finproyectodam.external_datos.registrousuarios.excepciones.EmailException;
-import com.finproyectodam.external_datos.registrousuarios.excepciones.PasswordException;
-import com.finproyectodam.external_datos.registrousuarios.excepciones.UserNameException;
-import com.finproyectodam.external_datos.registrousuarios.model.RegistroUsuariosDTO;
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesEmail;
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesPassword;
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesUserName;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.EmailException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.PasswordException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.UserNameException;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesEmail;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesPassword;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesUserName;
 import com.finproyectodam.external_datos.servicio_comunicacion.ServicioDB;
 import org.springframework.stereotype.Service;
 

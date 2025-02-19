@@ -1,8 +1,8 @@
 package com.finproyectodam.external_datos;
 
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesEmail;
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesPassword;
-import com.finproyectodam.external_datos.registrousuarios.service.comprobaciones.ComprobacionesUserName;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesEmail;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesPassword;
+import com.finproyectodam.external_datos.usuarios.registrousuarios.service.comprobaciones.ComprobacionesUserName;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
