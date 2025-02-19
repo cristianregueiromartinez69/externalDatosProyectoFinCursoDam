@@ -20,7 +20,7 @@ public class ArtistaInfoRestController {
         this.artistasInfoService = artistasInfoService;
     }
 
-    @GetMapping("/nombre{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public ResponseEntity<ArtistaDTO> getArtistaByNombreController(@PathVariable String nombre) {
         try{
             ArtistaDTO artistaDTO = artistasInfoService.getArtistaNombre(nombre);

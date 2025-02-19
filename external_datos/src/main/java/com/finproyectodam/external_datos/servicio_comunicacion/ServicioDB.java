@@ -32,7 +32,7 @@ public interface ServicioDB {
     @PostMapping("/relationaldb/spotify/loginusuarios")
     void loginUsuarios(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
 
-    @GetMapping("relationaldb/spotify/artistas/info/{nombre}")
+    @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")
     ArtistaDTO getArtistaByNombre(@PathVariable String nombre);
 
 
