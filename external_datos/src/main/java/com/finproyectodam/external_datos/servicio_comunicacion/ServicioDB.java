@@ -1,8 +1,11 @@
 package com.finproyectodam.external_datos.servicio_comunicacion;
 
+import com.finproyectodam.external_datos.artistas.model.ArtistaDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -28,6 +31,9 @@ public interface ServicioDB {
      */
     @PostMapping("/relationaldb/spotify/loginusuarios")
     void loginUsuarios(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
+
+    @GetMapping("relationaldb/spotify/artistas/info/{nombre}")
+    ArtistaDTO getArtistaByNombre(@PathVariable String nombre);
 
 
 }
