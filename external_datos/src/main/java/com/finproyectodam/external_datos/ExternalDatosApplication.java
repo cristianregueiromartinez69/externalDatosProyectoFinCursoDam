@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: hacer login de los usuarios
+	//TODO: hacer info de artistas y busquedas con filtro
 
 }
