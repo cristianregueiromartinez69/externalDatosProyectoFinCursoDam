@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 /**
  * Clase con el servicio de comunicación para el otro microservicio
  * @author cristian && Joel
@@ -34,6 +36,9 @@ public interface ServicioDB {
 
     @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")
     ArtistaDTO getArtistaByNombre(@PathVariable String nombre);
+
+    @GetMapping("/relationaldb/spotify/artistas/info/genero/{generi}")
+    List<ArtistaDTO> getArtistaByGenero(@PathVariable String generi);
 
 
 }
