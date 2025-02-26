@@ -69,12 +69,12 @@ public interface ServicioDB {
     AlbumDTO getAlbumById(@PathVariable Integer id);
 
     /**
-     * Metodo para obtener un album por el titulo
+     * Metodo para obtener un album o albumes por el titulo
      * @param titulo el titulo del album
-     * @return el album o null
+     * @return la lista de albumes o album
      */
     @GetMapping("/relationaldb/spotify/albumes/info/titulo/{titulo}")
-    AlbumDTO getAlbumByTitulo(@PathVariable String titulo);
+    List<AlbumDTO> getAlbumByTitulo(@PathVariable String titulo);
 
     /**
      * Metodo para obtener una lista de albumes entre años de lanzamiento

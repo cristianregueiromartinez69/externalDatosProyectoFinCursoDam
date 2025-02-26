@@ -47,14 +47,14 @@ public class AlbumesInfoRestController {
     }
 
     /**
-     * Metodo Get para obtener un album por el titulo
+     * Metodo Get para obtener un album o albumes por titulo
      * @param titulo el titulo del album
-     * @return el album o null
+     * @return el album, lista de albumes o null
      */
     @GetMapping("/titulo/{titulo}")
-    public ResponseEntity<AlbumDTO> getAlbumByTituloRestController(@PathVariable String titulo){
+    public ResponseEntity<List<AlbumDTO>> getAlbumByTituloRestController(@PathVariable String titulo){
         try{
-            AlbumDTO albumDTO = albumesInfoService.getAlbumByTituloService(titulo);
+            List<AlbumDTO> albumDTO = albumesInfoService.getAlbumByTituloService(titulo);
             return ResponseEntity.ok(albumDTO);
         }catch (FeignException.NotFound ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -69,7 +69,7 @@ public class AlbumesInfoRestController {
      * @param anoFin la fecha de fin
      * @return la lista de albumes o null
      */
-    @GetMapping("/anolanz}")
+    @GetMapping("/anolanz")
     public ResponseEntity <List<AlbumDTO>> getAlbumByTituloRestController(@RequestParam("anoInit") Integer anoInicio,
                                                                    @RequestParam("anoFin") Integer anoFin){
         try{

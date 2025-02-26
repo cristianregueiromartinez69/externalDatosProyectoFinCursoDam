@@ -35,11 +35,11 @@ public class AlbumesInfoService {
     }
 
     /**
-     * Metodo para obtener un album por titulo
+     * Metodo para obtener un album o albumes por titulo
      * @param titulo el titulo del album
-     * @return el album o null
+     * @return la lista de albumes o album o null
      */
-    public AlbumDTO getAlbumByTituloService(String titulo){
+    public List<AlbumDTO> getAlbumByTituloService(String titulo){
         return servicioDB.getAlbumByTitulo(titulo);
     }
 
