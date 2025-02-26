@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: hacer info de artistas y busquedas con filtro
+	//TODO: a probar el id de artistas
 
 }
