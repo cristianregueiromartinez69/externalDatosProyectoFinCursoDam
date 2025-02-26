@@ -18,12 +18,22 @@ import java.util.List;
 @RequestMapping("/spotify/albumes/info")
 public class AlbumesInfoRestController {
 
+    //variable del servicio
     private final AlbumesInfoService albumesInfoService;
 
+    /**
+     * Constructor de la clase
+     * @param albumesInfoService el servicio de albumes
+     */
     public AlbumesInfoRestController(AlbumesInfoService albumesInfoService) {
         this.albumesInfoService = albumesInfoService;
     }
 
+    /**
+     * Metodo Get para obtener albumes por el id
+     * @param id el id del album
+     * @return el album o null
+     */
     @GetMapping("/id/{id}")
     public ResponseEntity<AlbumDTO> getAlbumByIdRestController(@PathVariable Integer id){
         try{
@@ -36,6 +46,11 @@ public class AlbumesInfoRestController {
         }
     }
 
+    /**
+     * Metodo Get para obtener un album por el titulo
+     * @param titulo el titulo del album
+     * @return el album o null
+     */
     @GetMapping("/titulo/{titulo}")
     public ResponseEntity<AlbumDTO> getAlbumByTituloRestController(@PathVariable String titulo){
         try{
@@ -48,6 +63,12 @@ public class AlbumesInfoRestController {
         }
     }
 
+    /**
+     * Metodo Get para obtener albumes entre años de lanzamiento
+     * @param anoInicio la fecha de inicio
+     * @param anoFin la fecha de fin
+     * @return la lista de albumes o null
+     */
     @GetMapping("/anolanz}")
     public ResponseEntity <List<AlbumDTO>> getAlbumByTituloRestController(@RequestParam("anoInit") Integer anoInicio,
                                                                    @RequestParam("anoFin") Integer anoFin){
