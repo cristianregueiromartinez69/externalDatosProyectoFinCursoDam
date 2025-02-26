@@ -1,6 +1,6 @@
 package com.finproyectodam.external_datos.artistas.info.service;
 
-import com.finproyectodam.external_datos.artistas.model.ArtistaDTO;
+import com.finproyectodam.external_datos.model.ArtistaDTO;
 import com.finproyectodam.external_datos.servicio_comunicacion.ServicioDB;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,7 @@ public class ArtistasInfoService {
     }
 
     public ArtistaDTO getArtistaNombre(String nombre) {
+        System.out.println(servicioDB.getArtistaByNombre(nombre));
         return servicioDB.getArtistaByNombre(nombre);
     }
 

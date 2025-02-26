@@ -1,6 +1,6 @@
 package com.finproyectodam.external_datos.servicio_comunicacion;
 
-import com.finproyectodam.external_datos.artistas.model.ArtistaDTO;
+import com.finproyectodam.external_datos.model.ArtistaDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -37,7 +37,7 @@ public interface ServicioDB {
 
     //metodos de artistas
 
-    @GetMapping("relationaldb/spotify/artistas/info/id/{id}")
+    @GetMapping("/relationaldb/spotify/artistas/info/id/{id}")
     ArtistaDTO getArtistaById(@PathVariable Integer id);
 
     @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")
