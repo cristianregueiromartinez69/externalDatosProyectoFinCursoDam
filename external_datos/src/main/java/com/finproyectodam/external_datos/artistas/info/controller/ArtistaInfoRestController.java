@@ -1,7 +1,7 @@
 package com.finproyectodam.external_datos.artistas.info.controller;
 
 import com.finproyectodam.external_datos.artistas.info.service.ArtistasInfoService;
-import com.finproyectodam.external_datos.artistas.model.ArtistaDTO;
+import com.finproyectodam.external_datos.model.ArtistaDTO;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
