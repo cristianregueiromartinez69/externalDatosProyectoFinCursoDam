@@ -19,6 +19,7 @@ import java.util.List;
 @FeignClient(name = "relationaldb", url = ("http://localhost:8081"))
 public interface ServicioDB {
 
+    //metodos de usuarios
 
     /**
      * metodo post para registrar usuarios
@@ -33,6 +34,11 @@ public interface ServicioDB {
      */
     @PostMapping("/relationaldb/spotify/loginusuarios")
     void loginUsuarios(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
+
+    //metodos de artistas
+
+    @GetMapping("relationaldb/spotify/artistas/info/id/{id}")
+    ArtistaDTO getArtistaById(@PathVariable Integer id);
 
     @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")
     ArtistaDTO getArtistaByNombre(@PathVariable String nombre);
