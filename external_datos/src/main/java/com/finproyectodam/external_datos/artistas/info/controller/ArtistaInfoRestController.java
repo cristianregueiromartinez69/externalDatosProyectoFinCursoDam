@@ -22,7 +22,7 @@ public class ArtistaInfoRestController {
         this.artistasInfoService = artistasInfoService;
     }
 
-    /*
+
     @GetMapping("/id/{id}")
     public ResponseEntity<ArtistaDTO> getArtistaByIdController(@PathVariable Integer id) {
         try{
@@ -36,7 +36,7 @@ public class ArtistaInfoRestController {
     }
 
 
-     */
+
     @GetMapping("/nombre/{nombre}")
     public ResponseEntity<ArtistaDTO> getArtistaByNombreController(@PathVariable String nombre) {
         try{

@@ -1,10 +1,14 @@
 package com.finproyectodam.external_datos.artistas.model;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 public class ArtistaDTO {
 
     private String nameart;
     private String generoMusc;
     private String descrip;
+
 
     public ArtistaDTO() {
 
