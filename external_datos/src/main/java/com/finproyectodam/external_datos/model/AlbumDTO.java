@@ -2,8 +2,6 @@ package com.finproyectodam.external_datos.model;
 
 
 
-import com.finproyectodam.external_datos.artistas.model.ArtistaDTO;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 
