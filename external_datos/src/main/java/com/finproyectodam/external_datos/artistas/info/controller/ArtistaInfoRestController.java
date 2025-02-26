@@ -45,4 +45,16 @@ public class ArtistaInfoRestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<ArtistaDTO> getArtistaByIdController(@PathVariable Integer id) {
+        try{
+            ArtistaDTO artistaDTO = artistasInfoService.getArtistaById(id);
+            return ResponseEntity.ok(artistaDTO);
+        }catch (FeignException.NotFound ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 }

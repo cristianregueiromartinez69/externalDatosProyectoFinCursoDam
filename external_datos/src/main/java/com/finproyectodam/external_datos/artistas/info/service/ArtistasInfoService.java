@@ -22,4 +22,8 @@ public class ArtistasInfoService {
     public List<ArtistaDTO> getAllArtistasByGenero(String genero) {
         return servicioDB.getArtistaByGenero(genero);
     }
+
+    public ArtistaDTO getArtistaById(Integer id) {
+        return servicioDB.getArtistaById(id);
+    }
 }
