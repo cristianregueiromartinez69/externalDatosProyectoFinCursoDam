@@ -82,7 +82,8 @@ public interface ServicioDB {
      * @param anoFin el año de fin
      * @return una lista de albumes o null
      */
-    @GetMapping("/relationaldb/spotify/albumes/info/año")
-    List<AlbumDTO> getListAlbumByAnoLanz(@RequestParam Integer anoInicio, @RequestParam Integer anoFin);
+    @GetMapping("/relationaldb/spotify/albumes/info/anolanz")
+    List<AlbumDTO> getListAlbumByAnoLanz(@RequestParam("anoInit") Integer anoInicio,
+                                         @RequestParam("anoFin") Integer anoFin);
 
 }
