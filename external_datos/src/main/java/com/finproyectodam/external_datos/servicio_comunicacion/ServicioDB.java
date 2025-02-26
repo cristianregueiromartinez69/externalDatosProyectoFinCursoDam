@@ -37,12 +37,28 @@ public interface ServicioDB {
 
     //metodos de artistas
 
+
+    /**
+     * Metodo para obtener un artista por el id
+     * @param id el id del artista
+     * @return el artista
+     */
     @GetMapping("/relationaldb/spotify/artistas/info/id/{id}")
     ArtistaDTO getArtistaById(@PathVariable Integer id);
 
+    /**
+     * Metodo para buscar a un artista por su nombre
+     * @param nombre el nombre del artista
+     * @return el artista
+     */
     @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")
     ArtistaDTO getArtistaByNombre(@PathVariable String nombre);
 
+    /**
+     * Metodo para buscar a una lista de artistas por el genero musical
+     * @param generi el genero musical
+     * @return la lista de artistas
+     */
     @GetMapping("/relationaldb/spotify/artistas/info/genero/{generi}")
     List<ArtistaDTO> getArtistaByGenero(@PathVariable String generi);
 
