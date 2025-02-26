@@ -37,7 +37,7 @@ public interface ServicioDB {
 
     //metodos de artistas
 
-    @GetMapping("relationaldb/spotify/artistas/info/id/{id}")
+    @GetMapping("/relationaldb/spotify/artistas/info/id/{id}")
     ArtistaDTO getArtistaById(@PathVariable Integer id);
 
     @GetMapping("/relationaldb/spotify/artistas/info/nombre/{nombre}")

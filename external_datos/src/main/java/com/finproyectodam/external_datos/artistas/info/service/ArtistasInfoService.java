@@ -16,6 +16,7 @@ public class ArtistasInfoService {
     }
 
     public ArtistaDTO getArtistaNombre(String nombre) {
+        System.out.println(servicioDB.getArtistaByNombre(nombre));
         return servicioDB.getArtistaByNombre(nombre);
     }
 
