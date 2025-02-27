@@ -36,6 +36,13 @@ public class PlayListDTO {
         this.canciones = canciones;
     }
 
+    public PlayListDTO(String titulo, LocalDate fechacre, String descrip, UsuarioDTO userid) {
+        this.titulo = titulo;
+        this.fechacre = fechacre;
+        this.descrip = descrip;
+        this.userid = userid;
+    }
+
     public PlayListDTO(String titulo, LocalDate fechacre, String descrip) {
         this.titulo = titulo;
         this.fechacre = fechacre;
