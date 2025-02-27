@@ -2,6 +2,8 @@ package com.finproyectodam.external_datos.servicio_comunicacion;
 
 import com.finproyectodam.external_datos.model.AlbumDTO;
 import com.finproyectodam.external_datos.model.ArtistaDTO;
+import com.finproyectodam.external_datos.model.CancionDTO;
+import com.finproyectodam.external_datos.model.PlayListDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -90,5 +92,35 @@ public interface ServicioDB {
 
     //metodos de playlist
 
+
+    /**
+     * Metodo para creaar playList
+     * @param playListDTO la playlist a crear
+     */
+    @PostMapping("/relationaldb/spotify/playlist")
+    void createNewPlayList(@RequestBody PlayListDTO playListDTO);
+
+    /**
+     * Metodo para añadir canciones a la playlist
+     * @param id el id e la playlist
+     * @param cancionDTO la nueva cancion
+     */
+    @PostMapping("/relationaldb/spotify/playlist/{id}/canciones")
+    void addNewCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
+
+    /**
+     * Metodo para borrar canciones de la playlist
+     * @param id el id de la playlist
+     * @param cancionDTO la cancion a borrar
+     */
+    @DeleteMapping("/relationaldb/spotify/playlist/{id}/canciones")
+    void deleteCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
+
+    /**
+     * Metodo para borrar tu playlist
+     * @param id el id de la playlist
+     */
+    @DeleteMapping("/relationaldb/spotify/playlist/{id}")
+    void deleteAllPlayLists(@PathVariable Integer id);
 
 }
