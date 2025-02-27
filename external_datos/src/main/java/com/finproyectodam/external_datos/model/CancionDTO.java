@@ -1,33 +1,34 @@
 package com.finproyectodam.external_datos.model;
 
 
-
-import com.finproyectodam.external_datos.model.ArtistaDTO;
-
+import lombok.Data;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Clase dto de canciones
+ * @author cristian && joel
+ * @version 1.0
+ */
 public class CancionDTO {
 
-
-
-
+    //atributos de clase
     private String titulo;
-
-
     private Integer duracion;
-
-
     private String urlcancion;
-
     private ArtistaDTO artistaid;
-
-
     private AlbumDTO albumid;
-
-
     private Set<PlayListDTO> playlists = new LinkedHashSet<>();
 
+    /**
+     * Contructor de la clase
+     * @param titulo el titulo de la cancion
+     * @param duracion la duracion de la cancion
+     * @param urlcancion la url de la cancion
+     * @param artistaid el artista de la cancion
+     * @param albumid el album de la cancion
+     * @param playlists la playlist de la cancion
+     */
     public CancionDTO(String titulo, Integer duracion, String urlcancion, ArtistaDTO artistaid, AlbumDTO albumid, Set<PlayListDTO> playlists) {
         this.titulo = titulo;
         this.duracion = duracion;
@@ -46,6 +47,7 @@ public class CancionDTO {
     public CancionDTO() {
     }
 
+    //getter y setter
     public String getTitulo() {
         return titulo;
     }

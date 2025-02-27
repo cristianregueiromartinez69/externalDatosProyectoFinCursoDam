@@ -1,30 +1,33 @@
 package com.finproyectodam.external_datos.model;
 
-
-
+import lombok.Data;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Clase dto de artistas
+ * @author cristian && joel
+ * @version 1.0
+ */
+
 public class ArtistaDTO {
 
-
-
-
+    //atributos de clase
     private String nameart;
-
-
     private String generoMusc;
-
-
     private String descrip;
-
-
     private Set<AlbumDTO> albumes = new LinkedHashSet<>();
-
-
     private Set<CancionDTO> canciones = new LinkedHashSet<>();
 
 
+    /**
+     * Constructor de la clase
+     * @param nameart el nombre del artista
+     * @param generoMusc el genero musical del artista
+     * @param descrip la descripcion del artista
+     * @param albumes los albumes del artista
+     * @param canciones las canciones del artista
+     */
     public ArtistaDTO(String nameart, String generoMusc, String descrip, Set<AlbumDTO> albumes, Set<CancionDTO> canciones) {
         this.nameart = nameart;
         this.generoMusc = generoMusc;
@@ -42,6 +45,7 @@ public class ArtistaDTO {
     public ArtistaDTO() {
     }
 
+    //getter y setter
     public String getNameart() {
         return nameart;
     }
