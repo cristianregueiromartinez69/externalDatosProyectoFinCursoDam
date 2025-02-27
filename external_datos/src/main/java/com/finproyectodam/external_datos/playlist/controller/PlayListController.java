@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Restcontroller de las playlist
- * @author cristian
+ * @author cristian && Joel
  * @version 1.0
  */
 @RestController
