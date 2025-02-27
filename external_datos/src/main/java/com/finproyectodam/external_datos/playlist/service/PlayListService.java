@@ -30,8 +30,7 @@ public class PlayListService {
     public void createNewPlayListService(PlayListDTO playListDTO) {
 
         PlayListDTO auxPlayListDTO = new PlayListDTO(playListDTO.getTitulo(),
-                playListDTO.getFechacre(), playListDTO.getDescrip(),
-                playListDTO.getUserid());
+                playListDTO.getFechacre(), playListDTO.getDescrip());
 
         servicioDB.createNewPlayList(auxPlayListDTO);
     }

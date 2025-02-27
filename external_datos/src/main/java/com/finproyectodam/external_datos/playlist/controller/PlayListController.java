@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version 1.0
  */
 @RestController
-@RequestMapping("/spotify/spotify/playlist")
+@RequestMapping("/spotify/playlist")
 public class PlayListController {
 
     private final PlayListService playListService;
@@ -45,6 +45,6 @@ public class PlayListController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body("PlayList creada correctamente");
+        return ResponseEntity.ok("PlayList creada correctamente");
     }
 }
