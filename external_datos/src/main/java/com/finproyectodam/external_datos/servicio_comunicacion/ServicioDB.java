@@ -60,6 +60,8 @@ public interface ServicioDB {
     @GetMapping("/relationaldb/spotify/artistas/info/genero/{generi}")
     List<ArtistaDTO> getArtistaByGenero(@PathVariable String generi);
 
+    //metodos de albumes
+
     /**
      * Metodo para obtener un album por el id
      * @param id el id del album
@@ -85,5 +87,8 @@ public interface ServicioDB {
     @GetMapping("/relationaldb/spotify/albumes/info/anolanz")
     List<AlbumDTO> getListAlbumByAnoLanz(@RequestParam("anoInit") Integer anoInicio,
                                          @RequestParam("anoFin") Integer anoFin);
+
+    //metodos de playlist
+
 
 }
