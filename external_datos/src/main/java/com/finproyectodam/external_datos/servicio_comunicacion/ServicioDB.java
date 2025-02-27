@@ -97,7 +97,7 @@ public interface ServicioDB {
      * Metodo para creaar playList
      * @param playListDTO la playlist a crear
      */
-    @PostMapping("/relationaldb/spotify/playlist")
+    @PostMapping("/relationaldb/spotify/playlist/crear")
     void createNewPlayList(@RequestBody PlayListDTO playListDTO);
 
     /**
@@ -105,7 +105,7 @@ public interface ServicioDB {
      * @param id el id e la playlist
      * @param cancionDTO la nueva cancion
      */
-    @PostMapping("/relationaldb/spotify/playlist/{id}/canciones")
+    @PostMapping("/relationaldb/spotify/playlist/add/{id}/canciones")
     void addNewCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
 
     /**
@@ -113,14 +113,14 @@ public interface ServicioDB {
      * @param id el id de la playlist
      * @param cancionDTO la cancion a borrar
      */
-    @DeleteMapping("/relationaldb/spotify/playlist/{id}/canciones")
+    @DeleteMapping("/relationaldb/spotify/playlist/borrarcancion/{id}/canciones")
     void deleteCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
 
     /**
      * Metodo para borrar tu playlist
      * @param id el id de la playlist
      */
-    @DeleteMapping("/relationaldb/spotify/playlist/{id}")
+    @DeleteMapping("/relationaldb/spotify/playlist/borrarplaylist/{id}")
     void deleteAllPlayLists(@PathVariable Integer id);
 
 }
