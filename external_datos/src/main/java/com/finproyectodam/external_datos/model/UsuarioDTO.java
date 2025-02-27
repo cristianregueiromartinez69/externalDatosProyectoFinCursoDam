@@ -8,7 +8,6 @@ import lombok.Data;
  * @author cristian && joel
  * @version 1.0
  */
-@Data
 public class UsuarioDTO {
 
     //atributo de clase
