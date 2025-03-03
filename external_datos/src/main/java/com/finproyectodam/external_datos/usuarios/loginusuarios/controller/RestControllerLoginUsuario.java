@@ -37,7 +37,8 @@ public class RestControllerLoginUsuario {
     @PostMapping("/login")
     public ResponseEntity<String> loginUsuariosController(@RequestBody LoginUsuariosDTO loginUsuariosDTO) {
         try{
-            loginUsuariosService.loginUser(loginUsuariosDTO);
+            String token = loginUsuariosService.loginUser(loginUsuariosDTO);
+            return ResponseEntity.ok("Inicio de sesión de usuario correcto " + token);
         }catch (FeignException fe){
             if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
@@ -46,6 +47,6 @@ public class RestControllerLoginUsuario {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(fe.getMessage());
             }
         }
-        return ResponseEntity.ok("Inicio de sesión de usuario correcto");
+       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }
