@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: ediciones de playlist
+	//TODO: perfecto
 
 }
