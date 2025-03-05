@@ -4,6 +4,8 @@ import com.finproyectodam.external_datos.model.PlayListDTO;
 import com.finproyectodam.external_datos.servicio_comunicacion.ServicioDB;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Servicio de playlist
  * @author cristian && Joel
@@ -42,6 +44,14 @@ public class PlayListService {
      */
     public void addNewPlaylistCancionService(Integer playlistId, Integer cancionId) {
         servicioDB.addNewCancionesPlayList(playlistId, cancionId);
+    }
+
+    /**
+     * Metodo para devolver una lista de playlist del usuario
+     * @return la lista de playlist
+     */
+    public List<PlayListDTO> getAllPlayListsService() {
+        return servicioDB.getAllPlaylists();
     }
 
 }
