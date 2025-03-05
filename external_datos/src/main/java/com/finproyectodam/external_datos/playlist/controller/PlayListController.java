@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Restcontroller de las playlist
  * @author cristian && Joel
@@ -64,6 +66,25 @@ public class PlayListController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
         return ResponseEntity.ok("Cancion añadida a la playlist");
+    }
+
+    /**
+     * Metodo get para obtener todas las playlist del usuario al entrar
+     * @return la lista de playlist
+     */
+    @GetMapping()
+    public ResponseEntity<List<PlayListDTO>> getPlayListController(){
+        try{
+            List<PlayListDTO> playListDTOList = playListService.getAllPlayListsService();
+            return ResponseEntity.ok(playListDTOList);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.ok(null);
     }
 
 
