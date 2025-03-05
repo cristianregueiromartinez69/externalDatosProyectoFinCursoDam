@@ -109,6 +109,13 @@ public interface ServicioDB {
     void addNewCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
 
     /**
+     * Metodo para recoger todas las playlist del usuario
+     * @return una lista de playlist del usuario
+     */
+    @PostMapping("/relationaldb/spotify/playlist")
+    List<PlayListDTO> getAllPlaylists();
+
+    /**
      * Metodo para borrar canciones de la playlist
      * @param id el id de la playlist
      * @param cancionDTO la cancion a borrar
