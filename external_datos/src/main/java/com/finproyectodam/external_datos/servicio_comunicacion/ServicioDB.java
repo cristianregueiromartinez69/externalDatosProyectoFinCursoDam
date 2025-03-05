@@ -102,11 +102,11 @@ public interface ServicioDB {
 
     /**
      * Metodo para añadir canciones a la playlist
-     * @param id el id e la playlist
-     * @param cancionDTO la nueva cancion
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cancion
      */
-    @PostMapping("/relationaldb/spotify/playlist/add/{id}/canciones")
-    void addNewCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
+    @PostMapping("/relationaldb/spotify/playlist/{playlistId}/cancion/{cancionId}")
+    void addNewCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
 
     /**
      * Metodo para borrar canciones de la playlist

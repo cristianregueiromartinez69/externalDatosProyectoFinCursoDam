@@ -5,10 +5,7 @@ import com.finproyectodam.external_datos.playlist.service.PlayListService;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Restcontroller de las playlist
@@ -47,4 +44,27 @@ public class PlayListController {
         }
         return ResponseEntity.ok("PlayList creada correctamente");
     }
+
+    /**
+     * Metodo post para añadir canciones a la playlist
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cacion
+     * @return un mensaje diciendo de si se añadio o no la cancion
+     */
+    @PostMapping("/{playlistId}/cancion/{cancionId}")
+    public ResponseEntity<String> addnewCancionPlaylistController(@PathVariable Integer playlistId,
+                                                                  @PathVariable Integer cancionId){
+        try{
+            playListService.addNewPlaylistCancionService(playlistId, cancionId);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+        return ResponseEntity.ok("Cancion añadida a la playlist");
+    }
+
+
 }

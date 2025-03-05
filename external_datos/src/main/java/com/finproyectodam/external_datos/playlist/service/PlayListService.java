@@ -35,4 +35,13 @@ public class PlayListService {
         servicioDB.createNewPlayList(auxPlayListDTO);
     }
 
+    /**
+     * Metodo para añadir canciones a una playlist
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cancion
+     */
+    public void addNewPlaylistCancionService(Integer playlistId, Integer cancionId) {
+        servicioDB.addNewCancionesPlayList(playlistId, cancionId);
+    }
+
 }
