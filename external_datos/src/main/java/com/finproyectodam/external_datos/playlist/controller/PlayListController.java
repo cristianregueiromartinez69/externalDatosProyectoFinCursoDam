@@ -72,7 +72,7 @@ public class PlayListController {
      * Metodo get para obtener todas las playlist del usuario al entrar
      * @return la lista de playlist
      */
-    @GetMapping()
+    @GetMapping("/info")
     public ResponseEntity<List<PlayListDTO>> getPlayListController(){
         try{
             List<PlayListDTO> playListDTOList = playListService.getAllPlayListsService();

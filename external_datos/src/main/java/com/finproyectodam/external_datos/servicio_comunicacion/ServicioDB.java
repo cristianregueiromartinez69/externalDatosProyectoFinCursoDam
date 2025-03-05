@@ -112,7 +112,7 @@ public interface ServicioDB {
      * Metodo para recoger todas las playlist del usuario
      * @return una lista de playlist del usuario
      */
-    @PostMapping("/relationaldb/spotify/playlist")
+    @GetMapping("/relationaldb/spotify/playlist/info")
     List<PlayListDTO> getAllPlaylists();
 
     /**
