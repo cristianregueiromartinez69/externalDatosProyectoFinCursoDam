@@ -105,5 +105,22 @@ public class PlayListController {
         return ResponseEntity.ok(null);
     }
 
+    /**
+     * Metodo deleteMapping que borra una playlist por id
+     * @param id el id de la playlist a borrar
+     * @return un mensaje descriptivo del mismo
+     */
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deletePlayListByIdController(@PathVariable Integer id){
+        try{
+            playListService.deletePlayListById(id);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
+            }
+        }
+        return ResponseEntity.ok("PlayList eliminada correctamente");
+    }
+
 
 }
