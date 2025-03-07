@@ -116,6 +116,14 @@ public interface ServicioDB {
     List<PlayListDTO> getAllPlaylists();
 
     /**
+     * Metodo que devuelve una playlist por id
+     * @param id el id de la playlist
+     * @return el objeto playlist
+     */
+    @GetMapping("/relationaldb/spotify/playlist/info/{id}")
+    PlayListDTO getPlaylistById(@PathVariable Integer id);
+
+    /**
      * Metodo para borrar canciones de la playlist
      * @param id el id de la playlist
      * @param cancionDTO la cancion a borrar
