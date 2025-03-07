@@ -54,4 +54,13 @@ public class PlayListService {
         return servicioDB.getAllPlaylists();
     }
 
+    /**
+     * Metodo de servicio para devolver una playlist por el id
+     * @param playlistId el id de la playlist
+     * @return el objeto playlist
+     */
+    public PlayListDTO getPlayListById(Integer playlistId) {
+        return servicioDB.getPlaylistById(playlistId);
+    }
+
 }
