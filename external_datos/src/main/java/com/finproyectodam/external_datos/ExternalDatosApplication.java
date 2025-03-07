@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: perfecto
+	//TODO: playlist por id hecho
 
 }
