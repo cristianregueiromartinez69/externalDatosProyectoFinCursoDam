@@ -87,5 +87,23 @@ public class PlayListController {
         return ResponseEntity.ok(null);
     }
 
+    /**
+     * metodo get que obtiene una playlist por el id
+     * @param id el id de la playlist
+     * @return el objeto playlist
+     */
+    @GetMapping("/info/{id}")
+    public ResponseEntity<PlayListDTO> getPlayListByIdController(@PathVariable Integer id){
+        try{
+            PlayListDTO playListDTO = playListService.getPlayListById(id);
+            return ResponseEntity.ok(playListDTO);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
+        }
+        return ResponseEntity.ok(null);
+    }
+
 
 }
