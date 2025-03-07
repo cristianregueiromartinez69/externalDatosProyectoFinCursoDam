@@ -63,4 +63,12 @@ public class PlayListService {
         return servicioDB.getPlaylistById(playlistId);
     }
 
+    /**
+     * Metodo que borra una playlist por id
+     * @param playlistId el id de la playlist
+     */
+    public void deletePlayListById(Integer playlistId) {
+        servicioDB.deletePlaylistById(playlistId);
+    }
+
 }

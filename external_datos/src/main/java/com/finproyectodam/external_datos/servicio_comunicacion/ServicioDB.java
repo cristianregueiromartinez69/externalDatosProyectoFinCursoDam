@@ -136,6 +136,6 @@ public interface ServicioDB {
      * @param id el id de la playlist
      */
     @DeleteMapping("/relationaldb/spotify/playlist/borrarplaylist/{id}")
-    void deleteAllPlayLists(@PathVariable Integer id);
+    void deletePlaylistById(@PathVariable Integer id);
 
 }
