@@ -123,13 +123,6 @@ public interface ServicioDB {
     @GetMapping("/relationaldb/spotify/playlist/info/{id}")
     PlayListDTO getPlaylistById(@PathVariable Integer id);
 
-    /**
-     * Metodo para borrar canciones de la playlist
-     * @param id el id de la playlist
-     * @param cancionDTO la cancion a borrar
-     */
-    @DeleteMapping("/relationaldb/spotify/playlist/borrarcancion/{id}/canciones")
-    void deleteCancionesPlayList(@PathVariable Integer id, @RequestBody CancionDTO cancionDTO);
 
     /**
      * Metodo para borrar tu playlist
@@ -137,5 +130,14 @@ public interface ServicioDB {
      */
     @DeleteMapping("/relationaldb/spotify/playlist/delete/{id}")
     void deletePlaylistById(@PathVariable Integer id);
+
+    /**
+     * Metodo para borrar canciones de la playlist
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cancion a borrar
+     */
+    @DeleteMapping("/relationaldb/spotify/playlist/delete/{playlistId}/cancion/{cancionId}")
+    void deleteCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
+
 
 }
