@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: hacer busquedas y filtros de albumes
+	//TODO: todo hecho, vamos a control de fallos
 
 }

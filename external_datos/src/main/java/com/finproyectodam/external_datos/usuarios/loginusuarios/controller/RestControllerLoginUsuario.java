@@ -46,6 +46,6 @@ public class RestControllerLoginUsuario {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(fe.getMessage());
             }
         }
-        return ResponseEntity.ok("Inicio de sesión de usuario correcto");
+        return ResponseEntity.ok("Inicio de sesión de usuario correcto ");
     }
 }

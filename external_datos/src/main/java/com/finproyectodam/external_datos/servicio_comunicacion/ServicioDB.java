@@ -2,6 +2,8 @@ package com.finproyectodam.external_datos.servicio_comunicacion;
 
 import com.finproyectodam.external_datos.model.AlbumDTO;
 import com.finproyectodam.external_datos.model.ArtistaDTO;
+import com.finproyectodam.external_datos.model.CancionDTO;
+import com.finproyectodam.external_datos.model.PlayListDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -60,6 +62,8 @@ public interface ServicioDB {
     @GetMapping("/relationaldb/spotify/artistas/info/genero/{generi}")
     List<ArtistaDTO> getArtistaByGenero(@PathVariable String generi);
 
+    //metodos de albumes
+
     /**
      * Metodo para obtener un album por el id
      * @param id el id del album
@@ -85,5 +89,55 @@ public interface ServicioDB {
     @GetMapping("/relationaldb/spotify/albumes/info/anolanz")
     List<AlbumDTO> getListAlbumByAnoLanz(@RequestParam("anoInit") Integer anoInicio,
                                          @RequestParam("anoFin") Integer anoFin);
+
+    //metodos de playlist
+
+
+    /**
+     * Metodo para creaar playList
+     * @param playListDTO la playlist a crear
+     */
+    @PostMapping("/relationaldb/spotify/playlist/crear")
+    void createNewPlayList(@RequestBody PlayListDTO playListDTO);
+
+    /**
+     * Metodo para añadir canciones a la playlist
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cancion
+     */
+    @PostMapping("/relationaldb/spotify/playlist/{playlistId}/cancion/{cancionId}")
+    void addNewCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
+
+    /**
+     * Metodo para recoger todas las playlist del usuario
+     * @return una lista de playlist del usuario
+     */
+    @GetMapping("/relationaldb/spotify/playlist/info")
+    List<PlayListDTO> getAllPlaylists();
+
+    /**
+     * Metodo que devuelve una playlist por id
+     * @param id el id de la playlist
+     * @return el objeto playlist
+     */
+    @GetMapping("/relationaldb/spotify/playlist/info/{id}")
+    PlayListDTO getPlaylistById(@PathVariable Integer id);
+
+
+    /**
+     * Metodo para borrar tu playlist
+     * @param id el id de la playlist
+     */
+    @DeleteMapping("/relationaldb/spotify/playlist/delete/{id}")
+    void deletePlaylistById(@PathVariable Integer id);
+
+    /**
+     * Metodo para borrar canciones de la playlist
+     * @param playlistId el id de la playlist
+     * @param cancionId el id de la cancion a borrar
+     */
+    @DeleteMapping("/relationaldb/spotify/playlist/delete/{playlistId}/cancion/{cancionId}")
+    void deleteCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
+
 
 }
