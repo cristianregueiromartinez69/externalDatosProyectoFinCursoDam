@@ -18,6 +18,6 @@ public class ExternalDatosApplication {
 	}
 
 
-	//TODO: playlist por id hecho
+	//TODO: todo hecho, vamos a control de fallos
 
 }
