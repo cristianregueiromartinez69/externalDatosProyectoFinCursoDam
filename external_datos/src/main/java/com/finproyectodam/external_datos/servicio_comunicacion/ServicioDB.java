@@ -135,7 +135,7 @@ public interface ServicioDB {
      * Metodo para borrar tu playlist
      * @param id el id de la playlist
      */
-    @DeleteMapping("/relationaldb/spotify/playlist/borrarplaylist/{id}")
+    @DeleteMapping("/relationaldb/spotify/playlist/delete/{id}")
     void deletePlaylistById(@PathVariable Integer id);
 
 }
