@@ -122,5 +122,22 @@ public class PlayListController {
         return ResponseEntity.ok("PlayList eliminada correctamente");
     }
 
+    /**
+     * Metodo de eliminacion de cancion de la playlist
+     * @param playlistId el id de la playlits
+     * @param cancionId el id de la cancion de la playlist
+     * @return un mensaje indicando si se elimino la cancion o no
+     */
+    @DeleteMapping("/delete/{playlistId}/cancion/{cancionId}")
+    public ResponseEntity<String> deleteSongPlaylistByIdController(@PathVariable Integer playlistId, @PathVariable Integer cancionId){
+        try{
+            playListService.deleteSongPlaylistById(playlistId, cancionId);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
+            }
+        }
+        return ResponseEntity.ok("Cancion de la playlist eliminada correctamente");
+    }
 
 }
