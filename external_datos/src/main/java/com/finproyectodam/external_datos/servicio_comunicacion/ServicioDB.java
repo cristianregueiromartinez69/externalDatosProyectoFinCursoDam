@@ -152,7 +152,7 @@ public interface ServicioDB {
      * @param id el id de la cancion
      * @return el objeto cancion
      */
-    @GetMapping("/relationaldb/spotify/canciones/info/{id}")
+    @GetMapping("/relationaldb/spotify/canciones/info/id/{id}")
     CancionDTO getCancionById(@PathVariable Integer id);
 
     /**
@@ -160,6 +160,6 @@ public interface ServicioDB {
      * @param titulo el titulo de la cancion
      * @return la cancion o canciones
      */
-    @GetMapping("/relationaldb/spotify/canciones/info/{titulo}")
+    @GetMapping("/relationaldb/spotify/canciones/info/titulo/{titulo}")
     List<CancionDTO> getListCancionByTitulo(@PathVariable String titulo);
 }

@@ -61,7 +61,7 @@ public class CancionesRestController {
      * @param id el id de la cancion
      * @return la cancion o null
      */
-    @GetMapping("/info/{id}")
+    @GetMapping("/info/id/{id}")
     public ResponseEntity<CancionDTO> getSongByIdController(@PathVariable Integer id){
         try{
             CancionDTO cancionDTO = cancionesService.getCancionByIdService(id);
@@ -84,7 +84,7 @@ public class CancionesRestController {
      * @param titulo el titulo de la cancion
      * @return la cancion o canciones o null
      */
-    @GetMapping("/info/{titulo}")
+    @GetMapping("/info/titulo/{titulo}")
     public ResponseEntity<List<CancionDTO>> getSongByTituloController(@PathVariable String titulo){
         try{
             List<CancionDTO> cancionDTOList = cancionesService.getCancionByTituloService(titulo);
