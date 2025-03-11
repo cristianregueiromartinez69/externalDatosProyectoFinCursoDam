@@ -45,4 +45,13 @@ public class CancionesService {
     public CancionDTO getCancionByIdService(Integer id){
         return servicioDB.getCancionById(id);
     }
+
+    /**
+     * metodo para obtener una cancion o canciones por el titulo
+     * @param titulo el titulo de la cancion
+     * @return la lista de canciones por titulo
+     */
+    public List<CancionDTO> getCancionByTituloService(String titulo){
+        return servicioDB.getListCancionByTitulo();
+    }
 }
