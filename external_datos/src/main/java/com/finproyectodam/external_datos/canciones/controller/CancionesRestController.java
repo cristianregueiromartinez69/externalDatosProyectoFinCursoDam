@@ -78,4 +78,29 @@ public class CancionesRestController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    /**
+     * Metodo para obtener una cancion o canciones por el titulo
+     * @param titulo el titulo de la cancion
+     * @return la cancion o canciones o null
+     */
+    @GetMapping("/info/{titulo}")
+    public ResponseEntity<List<CancionDTO>> getSongByTituloController(@PathVariable String titulo){
+        try{
+            List<CancionDTO> cancionDTOList = cancionesService.getCancionByTituloService(titulo);
+            if(cancionDTOList.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
+            else{
+                return ResponseEntity.ok(cancionDTOList);
+            }
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
