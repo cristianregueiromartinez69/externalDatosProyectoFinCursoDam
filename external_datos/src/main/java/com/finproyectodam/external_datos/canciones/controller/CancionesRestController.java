@@ -66,7 +66,7 @@ public class CancionesRestController {
         try{
             CancionDTO cancionDTO = cancionesService.getCancionByIdService(id);
             if(cancionDTO == null){
-                return ResponseEntity.noContent().build();
+                return ResponseEntity.notFound().build();
             }
             return ResponseEntity.ok(cancionDTO);
         }catch (FeignException fe) {
@@ -76,6 +76,6 @@ public class CancionesRestController {
         }catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.notFound().build();
     }
 }
