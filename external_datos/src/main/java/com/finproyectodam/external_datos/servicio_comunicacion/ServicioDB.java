@@ -154,4 +154,12 @@ public interface ServicioDB {
      */
     @GetMapping("/relationaldb/spotify/canciones/info/{id}")
     CancionDTO getCancionById(@PathVariable Integer id);
+
+    /**
+     * Metodo para obtener una cancion o lista de canciones por mismo titulo
+     * @param titulo el titulo de la cancion
+     * @return la cancion o canciones
+     */
+    @GetMapping("/relationaldb/spotify/canciones/info/{titulo}")
+    List<CancionDTO> getListCancionByTitulo(@PathVariable String titulo);
 }
