@@ -139,5 +139,10 @@ public interface ServicioDB {
     @DeleteMapping("/relationaldb/spotify/playlist/delete/{playlistId}/cancion/{cancionId}")
     void deleteCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
 
-
+    /**
+     * Metodo para listar todas las canciones disponibles en spotify
+     * @return una lista de canciones
+     */
+    @GetMapping("/relationaldb/spotify/canciones/info")
+    List<CancionDTO> getAllCanciones();
 }
