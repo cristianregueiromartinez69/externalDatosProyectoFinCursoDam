@@ -13,6 +13,7 @@ import java.util.Set;
 public class CancionDTO {
 
     //atributos de clase
+    private Integer id;
     private String titulo;
     private Integer duracion;
     private String urlcancion;
@@ -29,7 +30,8 @@ public class CancionDTO {
      * @param albumid el album de la cancion
      * @param playlists la playlist de la cancion
      */
-    public CancionDTO(String titulo, Integer duracion, String urlcancion, ArtistaDTO artistaid, AlbumDTO albumid, Set<PlayListDTO> playlists) {
+    public CancionDTO(Integer id, String titulo, Integer duracion, String urlcancion, ArtistaDTO artistaid, AlbumDTO albumid, Set<PlayListDTO> playlists) {
+        this.id = id;
         this.titulo = titulo;
         this.duracion = duracion;
         this.urlcancion = urlcancion;
@@ -48,6 +50,16 @@ public class CancionDTO {
     }
 
     //getter y setter
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getTitulo() {
         return titulo;
     }

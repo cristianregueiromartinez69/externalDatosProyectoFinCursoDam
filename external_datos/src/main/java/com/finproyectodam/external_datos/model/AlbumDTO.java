@@ -14,6 +14,7 @@ import java.util.Set;
 public class AlbumDTO {
 
     //atributos de clase
+    private Integer id;
     private String titulo;
     private Integer anolanz;
     private ArtistaDTO artistaid;
@@ -27,7 +28,8 @@ public class AlbumDTO {
      * @param artistaid el artista del album
      * @param canciones las canciones del album
      */
-    public AlbumDTO(String titulo, Integer anolanz, ArtistaDTO artistaid, Set<CancionDTO> canciones) {
+    public AlbumDTO(Integer id, String titulo, Integer anolanz, ArtistaDTO artistaid, Set<CancionDTO> canciones) {
+        this.id = id;
         this.titulo = titulo;
         this.anolanz = anolanz;
         this.artistaid = artistaid;
@@ -40,6 +42,14 @@ public class AlbumDTO {
     }
 
     public AlbumDTO() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     //getter y setter

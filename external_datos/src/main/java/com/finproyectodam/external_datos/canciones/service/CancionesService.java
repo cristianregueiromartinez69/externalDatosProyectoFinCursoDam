@@ -52,6 +52,6 @@ public class CancionesService {
      * @return la lista de canciones por titulo
      */
     public List<CancionDTO> getCancionByTituloService(String titulo){
-        return servicioDB.getListCancionByTitulo();
+        return servicioDB.getListCancionByTitulo(titulo);
     }
 }
