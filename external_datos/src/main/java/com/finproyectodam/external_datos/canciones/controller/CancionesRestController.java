@@ -6,6 +6,7 @@ import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,6 +51,29 @@ public class CancionesRestController {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
         } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    /**
+     * Metodo para obtener una cancion por el id de la misma
+     * @param id el id de la cancion
+     * @return la cancion o null
+     */
+    @GetMapping("/info/{id}")
+    public ResponseEntity<CancionDTO> getSongByIdController(@PathVariable Integer id){
+        try{
+            CancionDTO cancionDTO = cancionesService.getCancionByIdService(id);
+            if(cancionDTO == null){
+                return ResponseEntity.noContent().build();
+            }
+            return ResponseEntity.ok(cancionDTO);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        }catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         return ResponseEntity.noContent().build();
