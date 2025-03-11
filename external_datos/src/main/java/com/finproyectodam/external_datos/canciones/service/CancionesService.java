@@ -36,4 +36,13 @@ public class CancionesService {
         }
         return cancionDTOList;
     }
+
+    /**
+     * Metodo para obtener una cancion por su id
+     * @param id el id de la cancion
+     * @return el objeto cancion
+     */
+    public CancionDTO getCancionByIdService(Integer id){
+        return servicioDB.getCancionById(id);
+    }
 }
