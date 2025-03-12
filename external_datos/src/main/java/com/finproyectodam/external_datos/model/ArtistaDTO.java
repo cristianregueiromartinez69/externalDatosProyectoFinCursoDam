@@ -1,5 +1,6 @@
 package com.finproyectodam.external_datos.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -13,10 +14,15 @@ import java.util.Set;
 public class ArtistaDTO {
 
     //atributos de clase
+    private Integer id;
     private String nameart;
     private String generoMusc;
     private String descrip;
+
+    @JsonManagedReference("artista_albumes")
     private Set<AlbumDTO> albumes = new LinkedHashSet<>();
+
+    @JsonManagedReference("artista_canciones")
     private Set<CancionDTO> canciones = new LinkedHashSet<>();
 
 
@@ -28,7 +34,8 @@ public class ArtistaDTO {
      * @param albumes los albumes del artista
      * @param canciones las canciones del artista
      */
-    public ArtistaDTO(String nameart, String generoMusc, String descrip, Set<AlbumDTO> albumes, Set<CancionDTO> canciones) {
+    public ArtistaDTO(Integer id, String nameart, String generoMusc, String descrip, Set<AlbumDTO> albumes, Set<CancionDTO> canciones) {
+        this.id = id;
         this.nameart = nameart;
         this.generoMusc = generoMusc;
         this.descrip = descrip;
@@ -45,7 +52,18 @@ public class ArtistaDTO {
     public ArtistaDTO() {
     }
 
+
     //getter y setter
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getNameart() {
         return nameart;
     }

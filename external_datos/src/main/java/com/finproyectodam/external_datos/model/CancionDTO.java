@@ -1,6 +1,8 @@
 package com.finproyectodam.external_datos.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -13,12 +15,17 @@ import java.util.Set;
 public class CancionDTO {
 
     //atributos de clase
+    private Integer id;
     private String titulo;
     private Integer duracion;
     private String urlcancion;
-    private ArtistaDTO artistaid;
+
+    @JsonBackReference("canciones_albumes")
     private AlbumDTO albumid;
-    private Set<PlayListDTO> playlists = new LinkedHashSet<>();
+
+    @JsonBackReference("artista_canciones")
+    private ArtistaDTO artistaid;
+
 
     /**
      * Contructor de la clase
@@ -27,15 +34,14 @@ public class CancionDTO {
      * @param urlcancion la url de la cancion
      * @param artistaid el artista de la cancion
      * @param albumid el album de la cancion
-     * @param playlists la playlist de la cancion
      */
-    public CancionDTO(String titulo, Integer duracion, String urlcancion, ArtistaDTO artistaid, AlbumDTO albumid, Set<PlayListDTO> playlists) {
+    public CancionDTO(Integer id, String titulo, Integer duracion, String urlcancion, ArtistaDTO artistaid, AlbumDTO albumid) {
+        this.id = id;
         this.titulo = titulo;
         this.duracion = duracion;
         this.urlcancion = urlcancion;
         this.artistaid = artistaid;
         this.albumid = albumid;
-        this.playlists = playlists;
     }
 
     public CancionDTO(String titulo, Integer duracion, String urlcancion) {
@@ -48,6 +54,16 @@ public class CancionDTO {
     }
 
     //getter y setter
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -88,11 +104,5 @@ public class CancionDTO {
         this.albumid = albumid;
     }
 
-    public Set<PlayListDTO> getPlaylists() {
-        return playlists;
-    }
 
-    public void setPlaylists(Set<PlayListDTO> playlists) {
-        this.playlists = playlists;
-    }
 }
