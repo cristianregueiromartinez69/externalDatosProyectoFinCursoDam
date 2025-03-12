@@ -1,9 +1,7 @@
 package com.finproyectodam.external_datos.model;
 
 
-import lombok.Data;
 import java.time.LocalDate;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -31,11 +29,18 @@ public class PlayListDTO {
         this.descrip = descrip;
     }
 
+
+
     public PlayListDTO() {
 
     }
 
+
     //getter y setter
+
+
+
+
     public String getTitulo() {
         return titulo;
     }
@@ -59,5 +64,6 @@ public class PlayListDTO {
     public void setDescrip(String descrip) {
         this.descrip = descrip;
     }
+
 
 }
