@@ -17,12 +17,5 @@ public class ExternalDatosApplication {
 		SpringApplication.run(ExternalDatosApplication.class, args);
 	}
 
-
-	/*
-	TODO con las canciones:
-	2. listar por id
-	3. listar por nombre
-	4. controlar pausa, play, adelante y atras
-	 */
-
+	//TODO: hacer que aparezca una playlist aleatoria al entrar en la app y 4 canciones aleatorias
 }
