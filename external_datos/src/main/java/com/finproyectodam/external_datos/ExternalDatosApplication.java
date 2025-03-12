@@ -17,5 +17,5 @@ public class ExternalDatosApplication {
 		SpringApplication.run(ExternalDatosApplication.class, args);
 	}
 
-	//TODO: hacer que aparezca una playlist aleatoria al entrar en la app y 4 canciones aleatorias
+	//TODO: perfecto, vamos a historial
 }
