@@ -139,6 +139,9 @@ public interface ServicioDB {
     @DeleteMapping("/relationaldb/spotify/playlist/delete/{playlistId}/cancion/{cancionId}")
     void deleteCancionesPlayList(@PathVariable Integer playlistId, @PathVariable Integer cancionId);
 
+
+    //metodos de canciones
+
     /**
      * Metodo para listar todas las canciones disponibles en spotify
      * @return una lista de canciones
@@ -162,4 +165,13 @@ public interface ServicioDB {
      */
     @GetMapping("/relationaldb/spotify/canciones/info/titulo/{titulo}")
     List<CancionDTO> getListCancionByTitulo(@PathVariable String titulo);
+
+    //metodos random playlist y canciones
+
+    /**
+     * Metodo que al entrar en la pagina principal de spotify, te sale una playlist aleatoria
+     * @return la playlist o una recomendada
+     */
+    @GetMapping("/relationaldb/spotify/inicio")
+    PlayListDTO getInitPlaylistSpotify();
 }
