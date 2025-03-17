@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 
 /**
  * Servicio del historial de guardado de canciones
- * @author cristian
- * @version
+ * @author cristian && Joel
+ * @version 1.0
  */
 @Service
-public class HistorialService {
+public class HistorialGuardadoService {
 
     //atributo del servicio de comunicacion
     private final ServicioDB servicioDB;
@@ -18,7 +18,7 @@ public class HistorialService {
      * Constructor de la clase
      * @param servicioDB el servicio de comunicacion
      */
-    public HistorialService(ServicioDB servicioDB) {
+    public HistorialGuardadoService(ServicioDB servicioDB) {
         this.servicioDB = servicioDB;
     }
 
