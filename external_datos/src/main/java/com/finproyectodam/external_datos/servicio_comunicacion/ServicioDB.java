@@ -174,4 +174,11 @@ public interface ServicioDB {
      */
     @GetMapping("/relationaldb/spotify/inicio")
     PlayListDTO getInitPlaylistSpotify();
+
+    /**
+     * Metodo para cuando el usuario escuche una cancion, se guarde en un historial
+     * @param id el id de la cancion
+     */
+    @PostMapping("/relationaldb/spotify/canciones/play/id/{id}")
+    void saveCancionHistorial(@PathVariable Integer id);
 }
