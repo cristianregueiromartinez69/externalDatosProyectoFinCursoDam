@@ -177,8 +177,8 @@ public interface ServicioDB {
 
     /**
      * Metodo para cuando el usuario escuche una cancion, se guarde en un historial
-     * @param id el id de la cancion
+     * @param idCancion el id de la cancion
      */
-    @PostMapping("/relationaldb/spotify/canciones/play/id/{id}")
-    void saveCancionHistorial(@PathVariable Integer id);
+    @PostMapping("/relationaldb/spotify/canciones/play/id/{idCancion}")
+    void saveCancionHistorial(@PathVariable Integer idCancion);
 }

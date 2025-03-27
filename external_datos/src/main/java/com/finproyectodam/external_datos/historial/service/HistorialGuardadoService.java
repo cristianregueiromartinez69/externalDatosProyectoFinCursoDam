@@ -24,9 +24,9 @@ public class HistorialGuardadoService {
 
     /**
      * Metodo para guardar la cancion cuando el usuario le de al play
-     * @param id el id de la cancion
+     * @param idCancion el id de la cancion
      */
-    public void saveCancionHistorialService(Integer id){
-        servicioDB.saveCancionHistorial(id);
+    public void saveCancionHistorialService(Integer idCancion){
+        servicioDB.saveCancionHistorial(idCancion);
     }
 }

@@ -107,13 +107,13 @@ public class CancionesRestController {
 
     /**
      * Metodo post para guardar una cancion en el historial al escucharla
-     * @param id el id de la cancion
+     * @param idCancion el id de la cancion
      * @return un mensaje indicando que se guardó la cancion
      */
-    @PostMapping("/play/id/{id}")
-    public ResponseEntity<String> saveCancionHistorialRestController(@PathVariable Integer id) {
+    @PostMapping("/play/id/{idCancion}")
+    public ResponseEntity<String> saveCancionHistorialRestController(@PathVariable Integer idCancion) {
         try{
-            historialGuardadoService.saveCancionHistorialService(id);
+            historialGuardadoService.saveCancionHistorialService(idCancion);
         }catch (FeignException.NotFound ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (Exception e) {
