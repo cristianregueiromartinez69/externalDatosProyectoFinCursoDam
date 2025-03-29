@@ -1,6 +1,6 @@
 package com.finproyectodam.external_datos.historial.service;
 
-import com.finproyectodam.external_datos.servicio_comunicacion.ServicioDB;
+import com.finproyectodam.external_datos.servicio_comunicacion.ServicioMongo;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 public class HistorialGuardadoService {
 
     //atributo del servicio de comunicacion
-    private final ServicioDB servicioDB;
+    private final ServicioMongo servicioMongo;
 
     /**
      * Constructor de la clase
-     * @param servicioDB el servicio de comunicacion
+     * @param servicioMongo el servicio de comunicacion
      */
-    public HistorialGuardadoService(ServicioDB servicioDB) {
-        this.servicioDB = servicioDB;
+    public HistorialGuardadoService(ServicioMongo servicioMongo) {
+        this.servicioMongo = servicioMongo;
     }
 
     /**
@@ -27,6 +27,6 @@ public class HistorialGuardadoService {
      * @param idCancion el id de la cancion
      */
     public void saveCancionHistorialService(Integer idCancion){
-        servicioDB.saveCancionHistorial(idCancion);
+        servicioMongo.saveCancionHistorial(idCancion);
     }
 }
