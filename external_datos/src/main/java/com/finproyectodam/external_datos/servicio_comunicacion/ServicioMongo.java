@@ -14,7 +14,7 @@ public interface ServicioMongo {
      * @param loginUsuariosDTO el objeto usuario para el registro
      */
     @PostMapping("/MongoProyectoFinDam/spotify/loginusuarios")
-    void loginUsuarios(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
+    void loginUsuariosMongo(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
 
     /**
      * Metodo para cuando el usuario escuche una cancion, se guarde en un historial
