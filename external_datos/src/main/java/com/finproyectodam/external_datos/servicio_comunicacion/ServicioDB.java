@@ -35,6 +35,7 @@ public interface ServicioDB {
     @PostMapping("/relationaldb/spotify/loginusuarios")
     void loginUsuarios(@RequestBody LoginUsuariosDTO loginUsuariosDTO);
 
+
     //metodos de artistas
 
 
