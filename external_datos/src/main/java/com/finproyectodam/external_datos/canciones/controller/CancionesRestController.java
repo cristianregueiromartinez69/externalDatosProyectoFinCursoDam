@@ -114,10 +114,12 @@ public class CancionesRestController {
     public ResponseEntity<String> saveCancionHistorialRestController(@PathVariable Integer idCancion) {
         try{
             historialGuardadoService.saveCancionHistorialService(idCancion);
-        }catch (FeignException.NotFound ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
         return ResponseEntity.status(HttpStatus.OK).body("Cancion guardada en el hostorial");
     }
