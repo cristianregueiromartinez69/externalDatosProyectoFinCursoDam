@@ -3,21 +3,31 @@ package com.finproyectodam.external_datos.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
+/**
+ * Clase historial de DTO para recibir el historial
+ * @author cristian && Joel
+ * @version 1.0
+ */
 public class HistorialDTO {
 
-    @JsonIgnore
+    //atributos de clase
     private String id;
 
     private Integer idCancion;
 
-    @JsonIgnore
     private String emailUser;
 
     @JsonIgnore
     private LocalDate fechaRegistro;
 
+    /**
+     * Constructor de la clase
+     * @param id la clave primaria
+     * @param idCancion el id de la cancion
+     * @param emailUser el email del usuario
+     * @param fechaRegistro la fecha de registro
+     */
     public HistorialDTO(String id, Integer idCancion, String emailUser, LocalDate fechaRegistro) {
         this.id = id;
         this.idCancion = idCancion;
@@ -29,6 +39,7 @@ public class HistorialDTO {
 
     }
 
+    //getter y setter
     public String getId() {
         return id;
     }
