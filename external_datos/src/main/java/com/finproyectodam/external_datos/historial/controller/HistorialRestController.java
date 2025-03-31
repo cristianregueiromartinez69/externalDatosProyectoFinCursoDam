@@ -65,6 +65,8 @@ public class HistorialRestController {
         }catch (FeignException fe) {
             if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }else if (fe.status() == HttpStatus.NO_CONTENT.value()) {
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
             }
         }catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
@@ -83,6 +85,8 @@ public class HistorialRestController {
         }catch (FeignException fe) {
             if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            } else if (fe.status() == HttpStatus.NO_CONTENT.value()) {
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
             }
         }catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
