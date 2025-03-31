@@ -46,4 +46,10 @@ public interface ServicioMongo {
     @DeleteMapping("/MongoProyectoFinDam/spotify/historial/borrar/id/{idCancion}")
     void borrarHistorialById(@PathVariable Integer idCancion);
 
+    /**
+     * Metodo para borrar el historial entero de un usuario
+     */
+    @DeleteMapping("/MongoProyectoFinDam/spotify/historial/borrar")
+    void borrarTodoHistorial();
+
 }
