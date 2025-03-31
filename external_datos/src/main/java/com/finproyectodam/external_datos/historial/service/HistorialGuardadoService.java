@@ -42,7 +42,7 @@ public class HistorialGuardadoService {
      * Metodo para obtener el historial de mis canciones
      * @return la lista de historial de canciones
      */
-    private List<HistorialDTO> getAllHistorialService(){
+    public List<HistorialDTO> getAllHistorialService(){
         return servicioMongo.getAllHistorial();
     }
 
