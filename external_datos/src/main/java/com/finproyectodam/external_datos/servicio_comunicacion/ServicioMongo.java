@@ -1,11 +1,15 @@
 package com.finproyectodam.external_datos.servicio_comunicacion;
 
+import com.finproyectodam.external_datos.model.HistorialDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 @FeignClient(name = "MongoProyectoFinDam", url = ("http://localhost:8082"))
 public interface ServicioMongo {
@@ -31,6 +35,11 @@ public interface ServicioMongo {
     @PostMapping("/MongoProyectoFinDam/spotify/canciones/play/id/{idCancion}")
     void saveCancionHistorial(@PathVariable Integer idCancion);
 
-
+    /**
+     * Metodo para obtener el historial de canciones de mongo
+     * @return una lista de historiales
+     */
+    @GetMapping("/MongoProyectoFinDam/spotify/historial")
+    List<HistorialDTO> getAllHistorial();
 
 }
