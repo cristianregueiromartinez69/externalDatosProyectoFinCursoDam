@@ -4,10 +4,7 @@ import com.finproyectodam.external_datos.model.HistorialDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,5 +38,12 @@ public interface ServicioMongo {
      */
     @GetMapping("/MongoProyectoFinDam/spotify/historial")
     List<HistorialDTO> getAllHistorial();
+
+    /**
+     * Metodo que borra un objeto historial por id
+     * @param id el id del historial
+     */
+    @DeleteMapping("/MongoProyectoFinDam/spotify/historial/borrar/id/{id}")
+    void borrarHistorialById(@PathVariable Integer id);
 
 }
