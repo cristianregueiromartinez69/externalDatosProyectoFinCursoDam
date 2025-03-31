@@ -43,7 +43,7 @@ public interface ServicioMongo {
      * Metodo que borra un objeto historial por id
      * @param id el id del historial
      */
-    @DeleteMapping("/MongoProyectoFinDam/spotify/historial/borrar/id/{id}")
-    void borrarHistorialById(@PathVariable Integer id);
+    @DeleteMapping("/MongoProyectoFinDam/spotify/historial/borrar/id/{idCancion}")
+    void borrarHistorialById(@PathVariable Integer idCancion);
 
 }

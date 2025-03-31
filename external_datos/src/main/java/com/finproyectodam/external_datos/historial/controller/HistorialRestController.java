@@ -5,9 +5,7 @@ import com.finproyectodam.external_datos.model.CancionDTO;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -53,5 +51,24 @@ public class HistorialRestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+     * Metodo de borrado de cancion del historial por id
+     * @param idCancion el id de la cancion
+     * @return un mensaje descriptivo
+     */
+    @DeleteMapping("/historial/borrar/id/{idCancion}")
+    public ResponseEntity<String> borrarHistorialById(@PathVariable Integer idCancion){
+        try{
+            historialGuardadoService.deleteHistorialByIdService(idCancion);
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.ok("Cancion eliminada del historial");
     }
 }
