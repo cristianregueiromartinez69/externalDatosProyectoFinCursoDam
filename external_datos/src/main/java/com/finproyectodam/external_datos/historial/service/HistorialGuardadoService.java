@@ -68,4 +68,11 @@ public class HistorialGuardadoService {
         servicioMongo.borrarHistorialById(idCancion);
     }
 
+    /**
+     * Metodo que borra el historial de un usuario
+     */
+    public void deleteAllHistorial(){
+        servicioMongo.borrarTodoHistorial();
+    }
+
 }

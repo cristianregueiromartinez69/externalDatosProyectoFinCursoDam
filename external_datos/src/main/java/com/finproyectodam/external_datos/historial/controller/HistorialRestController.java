@@ -71,4 +71,22 @@ public class HistorialRestController {
         }
         return ResponseEntity.ok("Cancion eliminada del historial");
     }
+
+    /**
+     * Metodo para borrar el historial entero de un usuario
+     * @return un mensaje descriptivo indicando si se borro el historial entero o no
+     */
+    @DeleteMapping("/historial/borrar")
+    public ResponseEntity<String> borrarTodoHistorial(){
+        try{
+            historialGuardadoService.deleteAllHistorial();
+        }catch (FeignException fe) {
+            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+        return ResponseEntity.ok("Historial eliminado");
+    }
 }
