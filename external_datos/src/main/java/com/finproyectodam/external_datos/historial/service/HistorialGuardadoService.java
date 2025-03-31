@@ -60,4 +60,12 @@ public class HistorialGuardadoService {
         return cancionesHistorial;
     }
 
+    /**
+     * Metodo de borrado de objeto historial por id
+     * @param id el id del historial a borrar
+     */
+    public void deleteHistorialByIdService(Integer id){
+        servicioMongo.borrarHistorialById(id);
+    }
+
 }
