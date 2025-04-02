@@ -2,6 +2,7 @@ package com.finproyectodam.external_datos.servicio_comunicacion;
 
 import com.finproyectodam.external_datos.model.CancionDTO;
 import com.finproyectodam.external_datos.model.HistorialDTO;
+import com.finproyectodam.external_datos.model.TopCancionesDTO;
 import com.finproyectodam.external_datos.usuarios.loginusuarios.model.LoginUsuariosDTO;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.model.RegistroUsuariosDTO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -55,7 +56,7 @@ public interface ServicioMongo {
 
 
     @GetMapping("/MongoProyectoFinDam/spotify/topcanciones")
-    List<CancionDTO> getTopCanciones();
+    List<TopCancionesDTO> getTopCanciones();
 
 
 }

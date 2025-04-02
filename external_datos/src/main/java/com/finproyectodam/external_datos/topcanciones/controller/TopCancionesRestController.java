@@ -38,7 +38,7 @@ public class TopCancionesRestController {
     @GetMapping("/topcanciones")
     public ResponseEntity<List<CancionDTO>> getTopCanciones(){
         try{
-            List<CancionDTO> cancionDTOList = topCancionesService.getAllTopCanciones();
+            List<CancionDTO> cancionDTOList = topCancionesService.getAllCancionesTopEscuchadas(topCancionesService.getAllTopCanciones());
             if(cancionDTOList.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
