@@ -1,5 +1,6 @@
 package com.finproyectodam.external_datos.usuarios.registrousuarios.service;
 
+import com.finproyectodam.external_datos.servicio_comunicacion.ServicioMongo;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.EmailException;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.PasswordException;
 import com.finproyectodam.external_datos.usuarios.registrousuarios.excepciones.UserNameException;
@@ -19,13 +20,15 @@ import org.springframework.stereotype.Service;
 public class ServicioRegistroUsuarios {
 
     private final ServicioDB servicioDB;
+    private final ServicioMongo servicioMongo;
 
     /**
      * Constructor que inyecta dependencias del servicio de comunicacion
      * @param servicioDB ña interfaz con el servicio de comunicacion
      */
-    public ServicioRegistroUsuarios(ServicioDB servicioDB) {
+    public ServicioRegistroUsuarios(ServicioDB servicioDB, ServicioMongo servicioMongo) {
         this.servicioDB = servicioDB;
+        this.servicioMongo = servicioMongo;
     }
 
 
@@ -54,6 +57,7 @@ public class ServicioRegistroUsuarios {
             RegistroUsuariosDTO registroUsuariosDTO1 = new RegistroUsuariosDTO(registroUsuariosDTO.getUsername(), registroUsuariosDTO.getEmail(), registroUsuariosDTO.getPasswordU(), registroUsuariosDTO.getDateReg());
 
             servicioDB.registerUsers(registroUsuariosDTO1);
+            servicioMongo.registerUsersMongo(registroUsuariosDTO1);
         }
     }
 

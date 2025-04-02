@@ -17,5 +17,5 @@ public class ExternalDatosApplication {
 		SpringApplication.run(ExternalDatosApplication.class, args);
 	}
 
-	//TODO: perfecto, vamos a historial
+	//TODO: configurando redis para el historial
 }
