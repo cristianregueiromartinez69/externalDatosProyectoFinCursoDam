@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 public class ServicioRegistroUsuarios {
 
     private final ServicioDB servicioDB;
-
     /**
      * Constructor que inyecta dependencias del servicio de comunicacion
      * @param servicioDB ña interfaz con el servicio de comunicacion
