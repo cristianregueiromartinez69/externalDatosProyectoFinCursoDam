@@ -57,12 +57,15 @@ public class RegistroUsuariosRestController {
             return new ResponseEntity<>("Formato de email incorrecto, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
         } catch (PasswordException passEx) {
             return new ResponseEntity<>("Formato contraseña erroneo, debe ser de 12 o más carácteres, llevar mínimo 1 numero y 1 carácter especial, vuelve a intentarlo", HttpStatus.BAD_REQUEST);
-        } catch (FeignException fe) {
-            if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
-            }
-        }
-        //si fue va bien, el usuario está registrado
-        return ResponseEntity.ok("Usuario registrado correctamente");
+        }} catch (FeignException fe) {
+    if (fe.status() == HttpStatus.BAD_REQUEST.value()) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(fe.getMessage());
+    } else {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error externo al registrar el usuario.");
+    }
+}
+// si todo va bien, el usuario está registrado
+return ResponseEntity.ok("Usuario registrado correctamente");
+
     }
 }
